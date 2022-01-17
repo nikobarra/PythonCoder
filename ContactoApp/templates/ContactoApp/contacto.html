@@ -1,0 +1,19 @@
+{% extends "FinalApp/base.html" %}
+
+{% load static %}
+{% block content %}
+{% comment %} incrustamos el formulario creado en form.py {% endcomment %}
+<div class="formContainer">
+    {% if "correcto" in request.GET %}
+    <h1 class="container text-center"> Muchas gracias por contactarnos </h1>
+
+    {% endif %}
+    <form action="" method="POST">
+    {% csrf_token %}
+    <table>{{formContact.as_table}}</table>
+    <div class="btn_send_form">
+    <input type="submit" value="Enviar" ></div>
+</form>
+</div>
+
+{% endblock content %}
